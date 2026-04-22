@@ -1,0 +1,9 @@
+/* SPLASH SCREEN (lucy) */
+
+/* SELECTION SCREEN (Amir) */
+
+/* DETAILS/DESCRIPTION SCREEN (Kevin) */
+
+/* DETAILS/FORM SCREEN (Josh) */
+
+/* CONFIRMATION SCREEN (James) */
