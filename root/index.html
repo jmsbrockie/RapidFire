@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -83,9 +83,9 @@
                     </div>
                   
                     <br>
-                    <h2>Total : <!--Calculated total goes here--></h2>
+                    <h2>Total : £70</h2>
                   
-                    <button type="submit">BOOK NOW</button>
+                    <button type="button" class="BookNow">BOOK NOW</button>
                   </form>
             </section>
 
@@ -100,6 +100,7 @@
                         padding: 40px 20px;
                         min-height: 100vh;
                         display: flex;
+                        display: none;
                         flex-direction: column;
                         align-items: center;
                     }
@@ -201,17 +202,16 @@
     </div>
 
     
-   </section>
    <nav>
     <!--Where the Icons go-->
     <div class="nav-item button-1">
-        <span>Back</span>
+        <img src="img/arrow-left 1.png" alt="Back arrow" height="100px" width="100px">
     </div>
     <div class="nav-item button-2">
-        <span>Home</span>
+        <img src="img/home icon.png" alt="Home buttton" height="100px" width="100px">
     </div>
     <div class="nav-item button-3">
-        <span>Selection</span>
+        <img src="img/selection icon.png" alt="Selection button" height="100px" width="100px">
     </div>
 </nav>
 
