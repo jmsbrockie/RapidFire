@@ -102,6 +102,84 @@ header {
   }
 /* CONFIRMATION SCREEN (James) */
 
+#booking-success {
+  box-sizing: border-box;
+  background-color: #000;
+  font-family: 'Inter', sans-serif;
+  padding: 40px 20px;
+  min-height: 100vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+#booking-success .success-screen {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+#booking-success h1 {
+  color: orange;
+  margin: 10px 0;
+  line-height: 1.2;
+  font-size: 2.5rem;
+}
+
+#booking-success h3 {
+  color: #fff;
+  margin: 5px 0;
+}
+
+#booking-success .success-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#booking-success .success-logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+#booking-success .book-ref {
+  text-align: center;
+  background: #fff;
+  padding: 15px;
+  margin: 25px auto;
+  border: 4px solid orange;
+  width: fit-content;
+  min-width: 200px;
+}
+
+#booking-success .book-ref h3 {
+  background-color: #fff;
+  color: #000;
+  display: inline;
+  margin-right: 5px;
+}
+
+#booking-success #booking-id {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: orange;
+}
+
+#booking-success #qrcode {
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff;
+  display: inline-block;
+}
+
+#booking-success #qrcode img {
+  display: block;
+}
+
+#booking-success .return-btn {
+  margin-top: 30px;
+}
 
 
 
