@@ -6,14 +6,17 @@
 
 /* DETAILS/FORM SCREEN (Josh) */
 $(document).ready(function () {
-    $("#booking-success").hide()
+    $("#booking-success").hide();
 
-    $(".BookNow").on("lick" , function(e) {
+    $(".BookNow").on("click", function
+(e) {
         e.preventDefault();
-        $("#BookingPage").hide()
-        $("#booking-success").show()
-    })
-})
+
+        $("#BookingPage").hide();
+        $("nav").hide();
+        $("#booking-success").css("display" , "flex");
+    });
+});
 
 
 /* CONFIRMATION SCREEN (James) */
