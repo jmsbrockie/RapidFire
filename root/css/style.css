@@ -36,6 +36,54 @@ header {
 /* SPLASH SCREEN (lucy) */
 
 /* SELECTION SCREEN (Amir) */
+#ArenaSelection {
+    padding: 20px 0 100px;
+    color: white;
+}
+
+
+.arena-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.arena-card {
+    background: #1a1a1a;
+    border: 3px solid #ff6600;
+    overflow: hidden;
+}
+
+.arena-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.arena-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.arena-info h2 {
+    font-size: 26px;
+    color: orange;
+    margin-bottom: 8px;
+}
+
+.arena-info p {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.select-btn {
+    width: 180px;
+    height: auto;
+    cursor: pointer;
+}
+
 
 /* DETAILS/DESCRIPTION SCREEN (Kevin) */
 
