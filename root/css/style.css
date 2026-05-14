@@ -110,6 +110,42 @@ header {
 
 
 /* DETAILS/DESCRIPTION SCREEN (Kevin) */
+.Detailimg{
+  max-width: 90%;
+  border-radius: 25px;
+}
+.DetailPage{
+  text-align: center;
+}
+.DetailHeading{
+  text-shadow: 0px 4px 4px #FF7500;
+  color: white;
+  font-weight: bold;
+  font-size: 45px;
+  margin: 0;
+  padding: 0;
+  -webkit-text-stroke: 1px black;
+}
+.DetailDesc{
+  text-wrap: balance;
+  line-height: 30px;
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  font-weight: bold;
+  word-spacing: 3px;
+}
+.bookNow{
+  max-width: 40%;
+  margin: 10px;
+  padding: 10px;
+  transition-duration: 0.1s;
+}
+.bookNow:hover{
+  cursor: pointer;
+  max-width: 45%;
+}
+
 
 /* DETAILS/FORM SCREEN (Josh) */
   .booking-form {
