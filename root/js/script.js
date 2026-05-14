@@ -26,8 +26,8 @@ $(document).ready(function () {
             text: randomID,
             width: 128,
             height: 128,
-            colorDark: "#000000",
-            colorLight: "#ffffff",
+            colorDark: "#000",
+            colorLight: "#fff",
             correctLevel: QRCode.CorrectLevel.H
         });
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
         $("nav").hide();
         $("#booking-success").css("display" , "flex");
     });
-});
+
 
 
 /* CONFIRMATION SCREEN (James) */
@@ -45,6 +45,8 @@ $(document).ready(function () {
 $('#final-home-btn').click(function () {
     $('#booking-success').hide();
     $('nav').show();
-    $('section:first').css('display', 'block');
+    $('#splash-screen').css('display', 'block');
     window.scrollTo(0, 0);
 });
+
+}); 
