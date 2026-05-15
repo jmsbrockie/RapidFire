@@ -43,6 +43,36 @@ $(document).ready(function () {
 
 });
 
+$(document).ready(function () {
+
+    // LOGO  Go to HOME section
+    $(".HeadImg").click(function () {
+        $("#ArenaSelection").hide();
+        $("#splash-screen").show();
+    });
+
+    // BACK BUTTON  Go to HOME section
+    $(".button-1").click(function () {
+        $("#ArenaSelection").hide();
+        $("#splash-screen").show();
+    });
+
+    // HOME BUTTON  Go to HOME section
+    $(".button-2").click(function () {
+        $("#ArenaSelection").hide();
+        $("#splash-screen").show();
+    });
+
+    // SELECTION BUTTON Stay on current section !!!
+    $(".button-3").click(function () {
+        $("#ArenaSelection").show();
+        $("#splash-screen").hide();
+    });
+
+});
+
+
+
 
 /* DETAILS/DESCRIPTION SCREEN (Kevin) */
 
@@ -50,7 +80,11 @@ $(document).ready(function () {
 
 
 
+
+
 /* DETAILS/FORM SCREEN (Josh) */
+
+
 $(document).ready(function () {
     $("#booking-success").hide();
 

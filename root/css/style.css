@@ -211,6 +211,9 @@ header {
   cursor: pointer;
   max-width: 45%;
 }
+#BookingPage{
+  display: none;
+}
 
 
 
