@@ -1,8 +1,45 @@
 /* SPLASH SCREEN (lucy) */
 
+
+
+
 /* SELECTION SCREEN (Amir) */
 
+
+$(document).ready(function () {
+
+    
+    $(".DetailPage").hide();
+
+    // URBAN
+    $("#selectUrban").click(function () {
+        $("#ArenaSelection").hide();
+        $(".DetailPage").hide();
+        $("#UrbanArena").fadeIn(300);
+    });
+
+    // FOREST
+    $("#selectForest").click(function () {
+        $("#ArenaSelection").hide();
+        $(".DetailPage").hide();
+        $("#ForestArena").fadeIn(300);
+    });
+
+    // INDOOR
+    $("#selectIndoor").click(function () {
+        $("#ArenaSelection").hide();
+        $(".DetailPage").hide();
+        $("#IndoorArena").fadeIn(300);
+    });
+
+});
+
+
 /* DETAILS/DESCRIPTION SCREEN (Kevin) */
+
+
+
+
 
 /* DETAILS/FORM SCREEN (Josh) */
 $(document).ready(function () {

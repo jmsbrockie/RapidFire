@@ -104,7 +104,7 @@ header {
     border-radius: 20px;
     overflow: hidden;
     background: #000;
-    z-index: -1;
+    
 }
 
 
@@ -157,6 +157,9 @@ header {
     padding-bottom: 30px;
 }
 
+.DetailPage{
+  display: none;
+}
 
 
 
@@ -168,6 +171,7 @@ header {
 }
 .DetailPage{
   text-align: center;
+
 }
 .DetailHeading{
   text-shadow: 0px 4px 4px #FF7500;
@@ -351,11 +355,12 @@ nav {
     position: fixed;
     bottom: 0;
     height: 60px;
-    padding: 0.5 rem;
+    padding: 0.5rem;
     background-color: rgb(36, 36, 36);
     width: 100%;
     max-width: 700px;
     color: white;
+    z-index: 99;
 }
 
 .nav-item {
