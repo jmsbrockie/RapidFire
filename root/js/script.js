@@ -1,132 +1,123 @@
-/* SPLASH SCREEN (lucy) */
+// jQUERY (James)
 
 $(document).ready(function () {
 
- $("#booking-button").click(function () {
+    // NAV FUNCTION TO HIDE ALL SECTIONS EXCEPT TARGET
+    function navigateTo(targetId) {
+        $('section').hide();
+        $(targetId).fadeIn(300);
+        window.scrollTo(0, 0);
+    }
 
-$("#splash-screen").hide();
-
-$("#ArenaSelection").show();
-
-window.scrollTo(0, 0);
- });
-});
-
-/* SELECTION SCREEN (Amir) */
+    // HIDE ALL SECTIONS EXCEPT SPLASH SCREEN
+    $('section').hide();
+    $('#splash-screen').show();
 
 
-$(document).ready(function () {
-
+    // SPLASH SCREEN to ARENA SELECTION FLOW 
     
-    $(".DetailPage").hide();
-
-    // URBAN
-    $("#selectUrban").click(function () {
-        $("#ArenaSelection").hide();
-        $(".DetailPage").hide();
-        $("#UrbanArena").fadeIn(300);
+    $('#start-btn').click(function (e) {
+        e.preventDefault();
+        navigateTo('#ArenaSelection');
     });
 
-    // FOREST
-    $("#selectForest").click(function () {
-        $("#ArenaSelection").hide();
-        $(".DetailPage").hide();
-        $("#ForestArena").fadeIn(300);
+
+    // SELECTION SCREEN to DETAIL FLOW 
+
+    $('#selectUrban').click(function () {
+        navigateTo('#urban-detail');
     });
 
-    // INDOOR
-    $("#selectIndoor").click(function () {
-        $("#ArenaSelection").hide();
-        $(".DetailPage").hide();
-        $("#IndoorArena").fadeIn(300);
+    $('#selectForest').click(function () {
+        navigateTo('#forest-detail');
     });
 
-});
-
-$(document).ready(function () {
-
-    // LOGO  Go to HOME section
-    $(".HeadImg").click(function () {
-        $("#ArenaSelection").hide();
-        $("#splash-screen").show();
+    $('#selectIndoor').click(function () {
+        navigateTo('#indoor-detail');
     });
 
-    // BACK BUTTON  Go to HOME section
-    $(".button-1").click(function () {
-        $("#ArenaSelection").hide();
-        $("#splash-screen").show();
+
+    // DETAIL to BOOKING FORM FLOW
+
+    $('.bookNow').click(function () {
+        navigateTo('#BookingPage');
     });
 
-    // HOME BUTTON  Go to HOME section
-    $(".button-2").click(function () {
-        $("#ArenaSelection").hide();
-        $("#splash-screen").show();
+
+    // BACK NAV LOGIC FOR ALL SCREENS 
+
+    $('.nav-item-button-1').click(function () {
+        // Find the current visible section by checking which one is currently displayed
+        const currentScreen = $(this).closest('section').attr('id');
+
+        if (currentScreen === 'ArenaSelection') {
+            navigateTo('#splash-screen');
+        } else if (currentScreen === 'urban-detail' || currentScreen === 'forest-detail' || currentScreen === 'indoor-detail') {
+            navigateTo('#ArenaSelection');
+        } else if (currentScreen === 'BookingPage') {
+            navigateTo('#ArenaSelection'); 
+        }
     });
 
-    // SELECTION BUTTON Stay on current section !!!
-    $(".button-3").click(function () {
-        $("#ArenaSelection").show();
-        $("#splash-screen").hide();
+
+    // NAVBAR LINKS (HOME & SELECTION) 
+    
+    // Logo & Home navbar icon --> go to Splash-Screen
+    $('.HeadImg, .nav-item-button-2').click(function () {
+        $('nav').show(); 
+        navigateTo('#splash-screen');
     });
 
-});
+    // Selection navbar icon --> go to Arena Selection
+    $('.nav-item-button-3').click(function () {
+        $('nav').show(); 
+        navigateTo('#ArenaSelection');
+    });
 
 
-
-
-/* DETAILS/DESCRIPTION SCREEN (Kevin) */
-
-
-
-
-
-
-
-/* DETAILS/FORM SCREEN (Josh) */
-
-
-$(document).ready(function () {
-    $("#booking-success").hide();
-
-    $(".BookNow").on("click", function
-(e) {
+    // BOOKING FORM PROCESSING & QR CODE GENERATION 
+    // Booking form --> Confirmation Screen with QR code
+    $('.final-submit-btn').click(function (e) {
         e.preventDefault();
 
-    /* QR CODE GENERATION (James) */
+        // shows processing
+        const $btn = $(this);
+        $btn.text("Processing...").prop('disabled', true);
 
-        // Random ID 
-        const randomID = "RF-" + Math.floor(Math.random() * 90000 + 10000);
-        $('#booking-id').text(randomID);
+        setTimeout(() => {
+            // Generates Random RapidFire ID 
+            const randomID = "RF-" + Math.floor(Math.random() * 90000 + 10000);
+            $('#booking-id').text(randomID);
 
-        // Clear previous QR code
-        $('#qrcode').empty();
+            // Wipe out any old QR code 
+            $('#qrcode').empty();
 
-        // Generate QR code
-        new QRCode(document.getElementById("qrcode"), {
-            text: randomID,
-            width: 128,
-            height: 128,
-            colorDark: "#000",
-            colorLight: "#fff",
-            correctLevel: QRCode.CorrectLevel.H
-        });
+            
 
-        /* DETAILS/FORM SCREEN (Josh) */
+            // Direct view transition to confirmation layout wrapper before drawing QR
+            navigateTo('#booking-success');
+            $('#booking-success').css('display', 'flex'); 
 
-        $("#BookingPage").hide();
-        $("nav").hide();
-        $("#booking-success").css("display" , "flex");
+            // Compiles the QR code with RapidFire ID
+            new QRCode(document.getElementById("qrcode"), {
+                text: randomID,
+                width: 128,
+                height: 128,
+                colorDark: "#000000", 
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+
+            // Restore button state and reset form for next booking
+            $btn.text("BOOK NOW").prop('disabled', false);
+            $('.booking-form')[0].reset();
+        }, 1000); // one second delay designed to simulate processing time! 
     });
 
 
+    // REFRESH APP FROM CONFIRMATION SCREEN to SPLASH SCREEN
+    $('#final-home-btn').click(function () {
+        navigateTo('#splash-screen');
+    });
 
-/* CONFIRMATION SCREEN (James) */
-
-$('#final-home-btn').click(function () {
-    $('#booking-success').hide();
-    $('nav').show();
-    $('#splash-screen').css('display', 'block');
-    window.scrollTo(0, 0);
 });
-
-}); 
