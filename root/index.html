@@ -1,275 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapid Fire</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>RapidFire</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="js/script.js" defer></script>
 </head>
+
+
 <body>
-    <div class="container">
-        <main>
-                <!-- SPLASH SCREEN (Lucy) -->
-            <section id="splash-screen" class="splash-screen">
-<div class="splash-logo">
+
+    <!-- SPLASH SCREEN (Lucy) -->
+    <section id="splash-screen">
+        <div class="splash-logo">
             <img src="img/Rapidfire logo home .png" alt="logo">
         </div>
-        
-            <!-- hero -->
-            <div class="splash-page">
-                <img src="img/hero .png" alt="hero">
-            </div>
 
-        
-            <div class="button">
-                    <img src="img/BOOK NOW button with.png" 
-                    alt="button" 
-                    id="booking-button">
-            </div>
-            </section>
-
-            <!--SELECTION SCREEN (Amir)-->
- <section id="ArenaSelection">
-
-    <header>
-      <img src="img/paintball gun logo.png" alt="Rapidfire logo" height="70px" width="115px" class="HeadImg">
-      <img src="img/arena-badge.png" alt="Arenas badge" height="100px" width="95px" class="HeadImg">
-    </header>
-
-    <div class="arenas-section">
-
-      <!-- URBAN -->
-      <div class="arena-card">
-        <img src="img/Landscape paintball .png" class="arena-image" alt="Urban Arena">
-
-         <div class="arena-overlay">
-            <h2>URBAN</h2>
-            <p>Urban-style battlefield with cars & cover points.</p>
-            <img src="img/select-arena-aa 4.png" class="arena-btn-img" id="selectUrban" alt="Select Arena Button">
-         </div>
-      </div>
-
-      <!-- FOREST -->
-      <div class="arena-card">
-        <img src="img/forrest.jpeg" class="arena-image" alt="Forest Arena">
-
-         <div class="arena-overlay">
-            <h2>FOREST</h2>
-            <p>Forest arena with trees and barrels.</p>
-            <img src="img/select-arena-aa 4.png" class="arena-btn-img" id="selectForest" alt="Select Arena Button">
-         </div>
-      </div>
-
-      <!-- INDOOR -->
-      <div class="arena-card">
-         <img src="img/resize indoor.png" class="arena-image" alt="Indoor Arena">
-
-         <div class="arena-overlay">
-            <h2>INDOOR</h2>
-            <p>Indoor arena with graffiti and obstacles.</p>
-            <img src="img/select-arena-aa 4.png" class="arena-btn-img" id="selectIndoor" alt="Select Arena Button">
-         </div>
-      </div>
-
-    </div>
-
-    <nav>
-        <!--Where the Icons go , BOTTOM NAV-->
-        <div class="nav-item button-1">
-            <img src="img/arrow-left 1.png" alt="Back arrow" height="50px" width="50px">
+        <!-- hero -->
+        <div class="splash-hero">
+            <img src="img/hero .png" alt="hero">
         </div>
-        <div class="nav-item button-2">
-            <img src="img/home icon.png" alt="Home buttton" height="50px" width="50px">
+
+
+        <div class="button" id="start-btn">
+            <a href="#ArenaSelection" title="next page">
+                <img src="img/BOOK NOW button with.png" alt="button" class="button">
+            </a>
+
         </div>
-        <div class="nav-item button-3">
-            <img src="img/selection icon.png" alt="Selection button" height="50px" width="50px">
-        </div>
-    </nav>
+    </section>
 
-</section>
+    <!--SELECTION SCREEN (Amir)-->
 
-
-<!--DETAILS/DESCRIPTION PAGES (Kevin)-->
-<section id="DetailSection">
-
-    <!--URBAN ARENA-->
-
-    <div class="DetailPage" id="UrbanArena">
+    <section id="ArenaSelection">
 
         <header>
             <img src="img/paintball gun logo.png" alt="Rapidfire logo" height="70px" width="115px" class="HeadImg">
-            <img src="img/detailsf.png" alt="Detail Icon" height="100px" width="95px" class="HeadImg">
+            <img src="img/arena-badge.png" alt="Arenas badge" height="100px" width="95px" class="badge">
         </header>
 
-        <img src="img/Landscape paintball .png" class="Detailimg" >
+        <div class="arenas-section">
+
+            <!-- URBAN ARENA CARD -->
+            <div class="arena-card" id="urban">
+                <img src="img/Landscape paintball .png" class="arena-image" alt="Urban Arena">
+                <div class="arena-overlay">
+                    <h2>URBAN</h2>
+                    <p>Urban-style battlefield with cars & cover points.</p>
+                    <div class="arena-btn-img" id="selectUrban">
+                        <img src="img/select-arena-aa 3.png" alt="Select Arena Button">
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOREST ARENA CARD -->
+            <div class="arena-card" id="forest">
+                <img src="img/forrest.jpeg" class="arena-image" alt="Forest Arena">
+                <div class="arena-overlay">
+                    <h2>FOREST</h2>
+                    <p>Forest arena with trees and barrels.</p>
+                    <div class="arena-btn-img" id="selectForest">
+                        <img src="img/select-arena-aa 3.png" alt="Select Arena Button">
+                    </div>
+                </div>
+            </div>
+
+            <!-- INDOOR ARENA CARD -->
+            <div class="arena-card" id="indoor">
+                <img src="img/resize indoor.png" class="arena-image" alt="Indoor Arena">
+                <div class="arena-overlay">
+                    <h2>INDOOR</h2>
+                    <p>Indoor arena with graffiti and obstacles.</p>
+                    <div class="arena-btn-img" id="selectIndoor">
+                        <img src="img/select-arena-aa 3.png" alt="Select Arena Button">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Where the Icons go (BOTTOM NAVIGATION)-->
+        <nav class="navbar">
+            <div class="nav-item-button-1">
+                <img src="img/arrow-left 1.png" alt="Back arrow" height="50px" width="50px">
+            </div>
+            <div class="nav-item-button-2">
+                <img src="img/home icon.png" alt="Home button" height="50px" width="50px">
+            </div>
+            <div class="nav-item-button-3">
+                <img src="img/selection icon.png" alt="Selection button" height="50px" width="50px">
+            </div>
+        </nav>
+
+    </section>
+
+    <!-- DETAILS/DESCRIPTION PAGES (Kevin) -->
+
+    <!-- URBAN ARENA -->
+
+    <section id="urban-detail">
+
+        <header>
+            <img src="img/paintball gun logo.png" alt="Rapidfire logo" height="70px" width="115px" class="HeadImg">
+            <img src="img/detailsf.png" alt="Details badge" height="100px" width="95px" class="badge">
+        </header>
+
+        <img src="img/Landscape paintball .png" class="Detailimg">
 
         <h1 class="DetailHeading">URBAN</h1>
 
-        <p class="DetailDesc">The Urban Arena is designed to look like a small street area with cars, crates, and narrow paths. It creates fast action where players need quick reactions and good movement. There are many places to hide, push forward, or surprise other players, which keeps every match exciting. This arena can hold up to 12 players and is great for short games that focus on fast battles.</p>
+        <p class="DetailDesc">The Urban Arena is designed to look like a small street area with cars, crates, and narrow
+            paths. It creates fast action where players need quick reactions and good movement. There are many places to
+            hide, push forward, or surprise other players, which keeps every match exciting. This arena can hold up to
+            12 players and is great for short games that focus on fast battles.</p>
 
-        <p class="DetailDesc">This arena has a £20 base fee, plus £15 for each player. For enquiries, please email aberdeen@rapidfirepaintball.co.uk.</p>
+        <p class="DetailDesc">This arena has a £20 base fee, plus £15 for each player. For enquiries, please email <span
+                class="email-orange">aberdeen@rapidfirepaintball.co.uk</span></p>
 
         <p class="DetailDesc" style="font-size: 40px;">Price : £20.00</p>
 
         <img src="img/BOOK NOW button with.png" class="bookNow">
-    </div>
-    
-    <!--FOREST ARENA-->
 
-    <div class="DetailPage" id="ForestArena">
+        <nav class="navbar">
+            <div class="nav-item-button-1">
+                <img src="img/arrow-left 1.png" alt="Back arrow" height="50px" width="50px">
+            </div>
+            <div class="nav-item-button-2">
+                <img src="img/home icon.png" alt="Home button" height="50px" width="50px">
+            </div>
+            <div class="nav-item-button-3">
+                <img src="img/selection icon.png" alt="Selection button" height="50px" width="50px">
+            </div>
+        </nav>
+
+    </section>
+
+    <!-- FOREST ARENA -->
+
+    <section id="forest-detail">
 
         <header>
             <img src="img/paintball gun logo.png" alt="Rapidfire logo" height="70px" width="115px" class="HeadImg">
-            <img src="img/detailsf.png" alt="Detail Icon" height="100px" width="95px" class="HeadImg">
+            <img src="img/detailsf.png" alt="Details badge" height="100px" width="95px" class="badge">
         </header>
 
         <img src="img/forrest.jpeg" class="Detailimg">
 
         <h1 class="DetailHeading">FOREST</h1>
 
-        <p class="DetailDesc">The Forest Arena is a large outdoor space with trees, bushes, and natural cover. It gives players more room to move and encourages slower, more tactical play. The hidden paths and open areas make it good for planning ambushes or working together as a team. It can support up to 16 players and offers a more strategic style of gameplay.</p>
+        <p class="DetailDesc">The Forest Arena is a large outdoor space with trees, bushes, and natural cover. It gives
+            players more room to move and encourages slower, more tactical play. The hidden paths and open areas make it
+            good for planning ambushes or working together as a team. It can support up to 16 players and offers a more
+            strategic style of gameplay.</p>
 
-        <p class="DetailDesc">This arena has a £20 base fee, plus £15 for each player. For enquiries, please email aberdeen@rapidfirepaintball.co.uk.</p>
+
+        <p class="DetailDesc">This arena has a £20 base fee, plus £15 for each player. For enquiries, please email <span
+                class="email-orange">aberdeen@rapidfirepaintball.co.uk</span></p>
 
         <p class="DetailDesc" style="font-size: 40px;">Price : £20.00</p>
 
         <img src="img/BOOK NOW button with.png" class="bookNow">
 
-    </div>
+        <nav class="navbar">
+            <div class="nav-item-button-1">
+                <img src="img/arrow-left 1.png" alt="Back arrow" height="50px" width="50px">
+            </div>
+            <div class="nav-item-button-2">
+                <img src="img/home icon.png" alt="Home button" height="50px" width="50px">
+            </div>
+            <div class="nav-item-button-3">
+                <img src="img/selection icon.png" alt="Selection button" height="50px" width="50px">
+            </div>
+        </nav>
 
-    <!--INDOOR ARENA-->
+    </section>
 
-    <div class="DetailPage" id="IndoorArena">
+    <!-- INDOOR ARENA -->
+
+    <section id="indoor-detail">
 
         <header>
             <img src="img/paintball gun logo.png" alt="Rapidfire logo" height="70px" width="115px" class="HeadImg">
-            <img src="img/detailsf.png" alt="Detail Icon" height="100px" width="95px" class="HeadImg">
+            <img src="img/detailsf.png" alt="Details badge" height="100px" width="95px" class="badge">
         </header>
 
         <img src="img/resize indoor.png" class="Detailimg">
 
-        <h1 class="DetailHeading">URBAN</h1>
+        <h1 class="DetailHeading">INDOOR</h1>
 
-        <p class="DetailDesc">The Indoor Arena is inside a warehouse and includes many obstacles, barriers, and tight corners. It creates quick and intense matches where players need fast thinking and good aim. Because it is indoors, it works well in any weather and keeps the action steady. This arena fits up to 10 players and is ideal for short games that focus on close battles.</p>
+        <p class="DetailDesc">The Indoor Arena is inside a warehouse and includes many obstacles, barriers, and tight
+            corners. It creates quick and intense matches where players need fast thinking and good aim. Because it is
+            indoors, it works well in any weather and keeps the action steady. This arena fits up to 10 players and is
+            ideal for short games that focus on close battles.</p>
 
-        <p class="DetailDesc">This arena has a £20 base fee, plus £15 for each player. For enquiries, please email aberdeen@rapidfirepaintball.co.uk.</p>
+        <p class="DetailDesc">This arena has a £20 base fee, plus £15 for each player. For enquiries, please email <span
+                class="email-orange">aberdeen@rapidfirepaintball.co.uk</span></p>
 
         <p class="DetailDesc" style="font-size: 40px;">Price : £20.00</p>
 
         <img src="img/BOOK NOW button with.png" class="bookNow">
 
-    </div>
-    
-</section>
-            
-            <!-- DETAILS/BOOKING FORM PAGE (Josh)-->
-            <section id="BookingPage">
-                <header>
-                    <img src="img/paintball gun logo.png" alt="Rapidfire logo" height="70px" width="115px" class="HeadImg">
-                    <img src="img/bookingf.png" alt="Booking header" height="70px" width="85px" class="HeadImg">
-                </header>
-                <form class="booking-form">
-                    <label>Name</label>
-                    <input type="text" placeholder="Enter your name....">
-                  
-                    <label>Contact</label>
-                    <input type="tel" placeholder="Enter your number....">
-                  
-                    <label>Emal</label>
-                    <input type="email" placeholder="Enter your Email....">
-                  
-                    <label>Number of players</label>
-                    <select>
-                      <option selected disabled>Enter your Number of Players....</option>
-                      <!--Probaly a less obnoxious way to do this but whatever-->
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
-                      <option>11</option>
-                      <option>12</option>
-                      <option>13</option>
-                      <option>14</option>
-                      <option>15</option>
-                    </select>
-                  
-                    <label>Pick a Date</label>
-                    <input type="date">
-                  
-                    <div class="time-row">
-                      <div>
-                        <label>Pick Start Time</label>
-                        <input type="time">
-                      </div>
-                  
-                      <div>
-                        <label>Pick Finish Time</label>
-                        <input type="time">
-                      </div>
-                    </div>
-                  
-                    <br>
-                    <h2>Total : £70</h2>
-                  
-                    <button type="button" class="BookNow">BOOK NOW</button>
-                  </form>
+        <nav class="navbar">
+            <div class="nav-item-button-1">
+                <img src="img/arrow-left 1.png" alt="Back arrow" height="50px" width="50px">
+            </div>
+            <div class="nav-item-button-2">
+                <img src="img/home icon.png" alt="Home button" height="50px" width="50px">
+            </div>
+            <div class="nav-item-button-3">
+                <img src="img/selection icon.png" alt="Selection button" height="50px" width="50px">
+            </div>
+        </nav>
 
-                  <nav>
-    <!--Where the Icons go-->
-    <div class="nav-item button-1">
-        <img src="img/arrow-left 1.png" alt="Back arrow" height="50px" width="50px">
-    </div>
-    <div class="nav-item button-2">
-        <img src="img/home icon.png" alt="Home buttton" height="50px" width="50px">
-    </div>
-    <div class="nav-item button-3">
-        <img src="img/selection icon.png" alt="Selection button" height="50px" width="50px">
-    </div>
-</nav>
+    </section>
 
+    <!-- DETAILS/BOOKING FORM PAGE (Josh) -->
 
-            </section>
+    <section id="BookingPage">
+        <header>
+            <img src="img/paintball gun logo.png" alt="Rapidfire logo" height="70px" width="115px" class="HeadImg">
+            <img src="img/bookingf.png" alt="Arenas badge" height="100px" width="95px" class="badge">
+        </header>
+        <form class="booking-form">
+            <label>Name</label>
+            <input type="text" placeholder="Enter your name....">
 
-            <!-- CONFIRMATION SCREEN (James)-->
-             <section id="booking-success">
- 
-                <div class="success-logo">
-                    <img src="img/Paintball gun logo2 1.png" alt="Logo">
+            <label>Contact</label>
+            <input type="tel" placeholder="Enter your number....">
+
+            <label>Email</label>
+            <input type="email" placeholder="Enter your Email....">
+
+            <label>Number of players</label>
+            <select>
+                <option selected disabled>Enter your Number of Players....</option>
+                <!--Probaly a less obnoxious way to do this but whatever-->
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+            </select>
+
+            <label>Pick a Date</label>
+            <input type="date">
+
+            <div class="time-row">
+                <div>
+                    <label>Pick Start Time</label>
+                    <input type="time">
                 </div>
 
-                <div class="success-screen">
-                    <h1>Booking<br>Confirmed!</h1>
-                    <h3>Your Game is Activated</h3>
-
-                    <div class="book-ref">
-                        <h3>Booking ID:</h3> <span id="booking-id"></span>
-                    </div>
-
-                    <div id="qrcode">
-                        <!-- QR code inserted here -->
-                    </div>
-
-                    <div class="return-btn" id="final-home-btn">
-                        <img src="img/backtohome.png" alt="Back to Home">
-                    </div>
+                <div>
+                    <label>Pick Finish Time</label>
+                    <input type="time">
                 </div>
-            </section>
+            </div>
 
-        </main>
-    </div>
+            <button type="button" class="final-submit-btn">BOOK NOW</button>
+        </form>
 
-    
-   
+        <!-- Where the Icons go -->
+        <nav class="navbar">
+            <div class="nav-item-button-1">
+                <img src="img/arrow-left 1.png" alt="Back arrow" height="50px" width="50px">
+            </div>
+            <div class="nav-item-button-2">
+                <img src="img/home icon.png" alt="Home button" height="50px" width="50px">
+            </div>
+            <div class="nav-item-button-3">
+                <img src="img/selection icon.png" alt="Selection button" height="50px" width="50px">
+            </div>
+        </nav>
+    </section>
+
+    <!-- CONFIRMATION SCREEN (James) -->
+
+    <section id="booking-success">
+
+        <div class="success-logo">
+            <img src="img/Paintball gun logo2 1.png" alt="Logo">
+        </div>
+
+        <div class="success-screen">
+            <h1>Booking<br>Confirmed!</h1>
+            <h3>Your Game is Activated</h3>
+
+            <div class="book-ref">
+                <h3>Booking ID:</h3> <span id="booking-id"></span>
+            </div>
+
+            <div id="qrcode">
+                <!-- QR code inserted here -->
+            </div>
+
+            <div class="return-btn" id="final-home-btn">
+                <img src="img/backtohome.png" alt="Back to Home">
+            </div>
+        </div>
+    </section>
+
+
 
 </body>
-</html>
 
+</html>
